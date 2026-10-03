@@ -1,6 +1,6 @@
 # Open NeatQuote on the web
 
-The root `render.yaml` prepares a free Render preview with a provider-assigned HTTPS address. You do not need to buy a domain. The preview uses temporary storage: saved accounts and quotes can reset after restarts or redeployments. Use sample information. Payments are disabled even if payment keys are accidentally added.
+The root `render.yaml` prepares a free Render preview using Node 24 and a provider-assigned HTTPS address. You do not need to buy a domain. The preview uses temporary storage: saved accounts and quotes can reset after restarts or redeployments. Use sample information. Payments are disabled even if payment keys are accidentally added.
 
 The app is prepared locally. It is not publicly deployed yet. Activation requires a Render account that you create yourself, and the app source must be available on the repository's `main` branch.
 
@@ -16,6 +16,6 @@ No iyzico keys or payment account are required for this preview. The preview not
 
 ## Verification limits
 
-The application build and deployment configuration can be checked locally. The actual Render deployment, current free-plan availability, and assigned web address can be confirmed only in the owner's Render account. Official Render documentation requests were blocked by the cloud network proxy during preparation; no current free quotas or hosting prices are asserted here.
+The native Node installation, application build, production startup, and preview settings have been checked locally. The actual Render deployment, current free-plan availability, and assigned web address can be confirmed only in the owner's Render account. Official Render documentation requests were blocked by the cloud network proxy during preparation; no current free quotas or hosting prices are asserted here. The optional Docker image build was not completed in this cloud environment; the free Blueprint uses the tested native Node commands.
 
 Permanent hosting requires a separate decision: one service instance, a persistent writable disk for SQLite, HTTPS, backups, and owner-approved merchant setup. The free Blueprint does not create a paid service or disk.

@@ -2,17 +2,21 @@
 services:
   - type: web
     name: neatquote-preview
-    runtime: docker
+    runtime: node
     plan: free
     region: frankfurt
+    buildCommand: npm ci --no-audit --no-fund && npm run build
+    startCommand: npm start
     healthCheckPath: /api/health
     envVars:
       - key: NODE_ENV
         value: production
       - key: PORT
         value: "10000"
+      - key: NODE_VERSION
+        value: "24.19.0"
       - key: DATA_DIR
-        value: /app/data
+        value: /tmp/neatquote-preview
       - key: TRUST_PROXY
         value: "1"
       - key: NEATQUOTE_PREVIEW
