@@ -1,0 +1,19 @@
+# Free preview: no persistent disk and no payment credentials.
+services:
+  - type: web
+    name: neatquote-preview
+    runtime: docker
+    plan: free
+    region: frankfurt
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: "10000"
+      - key: DATA_DIR
+        value: /app/data
+      - key: TRUST_PROXY
+        value: "1"
+      - key: NEATQUOTE_PREVIEW
+        value: "1"
